@@ -34,7 +34,7 @@ const containersBox = blessed.box({
   top: '12%',
   left: 'center',
   width: '100%',
-  height: '100%',
+  height: '90%',
   label: ' {bold}{cyan-fg}Containers{/cyan-fg}{/bold} ',
   tags: true,
   border: {
