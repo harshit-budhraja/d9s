@@ -1,13 +1,8 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+	"extends": "@sindresorhus/tsconfig",
+	"compilerOptions": {
+		"jsx": "react",
+		"outDir": "dist"
+	},
+	"include": ["source"]
 }
