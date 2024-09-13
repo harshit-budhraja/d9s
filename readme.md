@@ -1,7 +1,7 @@
-# Dkr - Docker CLI To Manage Your Containers In Style!
+# D9s - Docker CLI To Manage Your Containers In Style!
 
 <img src="./assets/screenshot.png">
 
-Dkr provides a terminal UI to interact with your Docker containers. The aim of this project is to make it easier to navigate, observe and manage your applications in the wild. Dkr continuously watches Docker for changes and offers subsequent commands to interact with your observed resources.
+D9s provides a terminal UI to interact with your Docker containers. The aim of this project is to make it easier to navigate, observe and manage your applications in the wild. D9s continuously watches Docker for changes and offers subsequent commands to interact with your observed resources.
 
 Think of it as K9s for Docker!

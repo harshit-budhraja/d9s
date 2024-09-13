@@ -5,7 +5,7 @@ import terminalSize from 'terminal-size';
 import BigText from 'ink-big-text';
 import Gradient from 'ink-gradient';
 
-const dkrVersion = '0.0.1';
+const d9sVersion = '0.0.1';
 
 const colorMap: {
 	[key: string]: string;
@@ -20,12 +20,12 @@ const colorMap: {
 	pink: '#ffc0cb',
 	cyan: '#00ffff',
 	gray: '#808080',
-	dkr_orange: '#ffa500',
-	dkr_brown: '#dc3a28',
-	dkr_blue: '#0f63cc',
-	dkr_gray: '#b6b1b7',
-	dkr_lightblue: '#84cbfa',
-	dkr_highlightblue: '#28abee',
+	d9s_orange: '#ffa500',
+	d9s_brown: '#dc3a28',
+	d9s_blue: '#0f63cc',
+	d9s_gray: '#b6b1b7',
+	d9s_lightblue: '#84cbfa',
+	d9s_highlightblue: '#28abee',
 };
 
 const docker = new Docker();
@@ -76,13 +76,13 @@ export default function App() {
 	}
 
 	const selectedRowProps = {
-		color: colorMap['dkr_lightblue'],
+		color: colorMap['d9s_lightblue'],
 		bold: true,
 		underline: true,
 	};
 
 	const unselectedRowProps = {
-		color: colorMap['dkr_lightblue'],
+		color: colorMap['d9s_lightblue'],
 		dimColor: true,
 	};
 
@@ -91,74 +91,74 @@ export default function App() {
 			<Box flexDirection="row" justifyContent="space-between" marginBottom={-1}>
 				<Box flexDirection="column" marginLeft={1}>
 					<Text>
-						<Text color={colorMap['dkr_orange']}>Context: </Text>
+						<Text color={colorMap['d9s_orange']}>Context: </Text>
 						{
 							dockerInfo.OperatingSystem ?
 								<Text bold>{dockerInfo.OperatingSystem}</Text> :
-								<Text bold color={colorMap['dkr_brown']}>n/a</Text>
+								<Text bold color={colorMap['d9s_brown']}>n/a</Text>
 						}
 						<Newline />
-						<Text color={colorMap['dkr_orange']}>User: </Text>
+						<Text color={colorMap['d9s_orange']}>User: </Text>
 						{
 							dockerInfo.Name ?
 								<Text bold>{dockerInfo.Name}</Text> :
-								<Text bold color={colorMap['dkr_brown']}>n/a</Text>
+								<Text bold color={colorMap['d9s_brown']}>n/a</Text>
 						}
 						<Newline />
-						<Text color={colorMap['dkr_orange']}>Platform: </Text>
+						<Text color={colorMap['d9s_orange']}>Platform: </Text>
 						{
 							dockerInfo.OSType && dockerInfo.Architecture ?
 								<Text bold>{dockerInfo.OSType} ({dockerInfo.Architecture})</Text> :
-								<Text bold color={colorMap['dkr_brown']}>n/a</Text>
+								<Text bold color={colorMap['d9s_brown']}>n/a</Text>
 						}
 						<Newline />
-						<Text color={colorMap['dkr_orange']}>Dkr Rev: </Text>
-						<Text bold>v{dkrVersion}</Text>
+						<Text color={colorMap['d9s_orange']}>D9s Rev: </Text>
+						<Text bold>v{d9sVersion}</Text>
 						<Newline />
-						<Text color={colorMap['dkr_orange']}>Docker Rev: </Text>
+						<Text color={colorMap['d9s_orange']}>Docker Rev: </Text>
 						{
 							dockerInfo.ServerVersion ?
 								<Text bold>v{dockerInfo.ServerVersion}</Text> :
-								<Text bold color={colorMap['dkr_brown']}>n/a</Text>
+								<Text bold color={colorMap['d9s_brown']}>n/a</Text>
 						}
 						<Newline />
-						<Text color={colorMap['dkr_orange']}>CPUs: </Text>
+						<Text color={colorMap['d9s_orange']}>CPUs: </Text>
 						{
 							dockerInfo.NCPU ?
 								<Text bold>{dockerInfo.NCPU}</Text> :
-								<Text bold color={colorMap['dkr_brown']}>n/a</Text>
+								<Text bold color={colorMap['d9s_brown']}>n/a</Text>
 						}
 						<Newline />
-						<Text color={colorMap['dkr_orange']}>MEM: </Text>
+						<Text color={colorMap['d9s_orange']}>MEM: </Text>
 						{
 							dockerInfo.MemTotal ?
 								<Text bold>{Math.ceil(dockerInfo.MemTotal / (1024 * 1024 * 1024)).toFixed(2)} GB</Text> :
-								<Text bold color={colorMap['dkr_brown']}>n/a</Text>
+								<Text bold color={colorMap['d9s_brown']}>n/a</Text>
 						}
 					</Text>
 				</Box>
 
 				<Box flexDirection="column" marginRight={140}>
 					<Text>
-						<Text color={colorMap['dkr_blue']} bold>{"<ctrl+c>: "}</Text>
-						<Text color={colorMap['dkr_gray']}>quit</Text>
+						<Text color={colorMap['d9s_blue']} bold>{"<ctrl+c>: "}</Text>
+						<Text color={colorMap['d9s_gray']}>quit</Text>
 						<Newline />
-						<Text color={colorMap['dkr_blue']} bold>{"<up-arrow>: "}</Text>
-						<Text color={colorMap['dkr_gray']}>move up</Text>
+						<Text color={colorMap['d9s_blue']} bold>{"<up-arrow>: "}</Text>
+						<Text color={colorMap['d9s_gray']}>move up</Text>
 						<Newline />
-						<Text color={colorMap['dkr_blue']} bold>{"<down-arrow>: "}</Text>
-						<Text color={colorMap['dkr_gray']}>move down</Text>
+						<Text color={colorMap['d9s_blue']} bold>{"<down-arrow>: "}</Text>
+						<Text color={colorMap['d9s_gray']}>move down</Text>
 					</Text>
 				</Box>
 
 				<Box marginRight={3}>
 					<Gradient name="rainbow">
-						<BigText text='dkr' font='simple' letterSpacing={0} />
+						<BigText text='d9s' font='simple' letterSpacing={0} />
 					</Gradient>
 				</Box>
 			</Box>
 
-			<Box flexGrow={1} borderStyle="single" borderColor={colorMap['dkr_lightblue']}>
+			<Box flexGrow={1} borderStyle="single" borderColor={colorMap['d9s_lightblue']}>
 				<Box flexDirection="column" gap={0}>
 					<Box justifyContent="flex-start" width={terminalSize().columns - 1} marginLeft={1}>
 						<Box>
@@ -219,7 +219,7 @@ export default function App() {
 			</Box>
 
 			<Box marginLeft={1}>
-				<Text bold color={colorMap['black']} backgroundColor={colorMap['dkr_orange']}>{" <container> "}</Text>
+				<Text bold color={colorMap['black']} backgroundColor={colorMap['d9s_orange']}>{" <container> "}</Text>
 			</Box>
 		</Box>
 	);
