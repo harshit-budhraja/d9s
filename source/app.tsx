@@ -167,19 +167,19 @@ export default function App() {
 					</Box>
 
 					<Box flexDirection="row" justifyContent="space-between" width={terminalSize().columns - 10} marginLeft={1} marginTop={1}>
-						<Box width={30}>
+						<Box width={70}>
 							<Text bold>NAME</Text>
 						</Box>
-						<Box width={20}>
+						<Box width={50}>
 							<Text bold>IMAGE</Text>
 						</Box>
 						<Box width={20}>
 							<Text bold>STATUS</Text>
 						</Box>
-						<Box width={20}>
+						<Box width={50}>
 							<Text bold>PORTS</Text>
 						</Box>
-						<Box width={20}>
+						<Box width={50}>
 							<Text bold>AGE</Text>
 						</Box>
 					</Box>
@@ -189,19 +189,23 @@ export default function App() {
 							if (!container.Labels.hasOwnProperty('io.kubernetes.pod.uid')) {
 								return (
 									<Box key={index} flexDirection="row" justifyContent="space-between" width={terminalSize().columns - 10} marginLeft={1}>
-										<Box width={30}>
+										<Box width={70}>
 											<Text {...(index === selectedRow ? selectedRowProps : unselectedRowProps)}>{container.Names[0]!.replace('/', '')}</Text>
 										</Box>
-										<Box width={20}>
-											<Text {...(index === selectedRow ? selectedRowProps : unselectedRowProps)}>{container.Image}</Text>
+										<Box width={50}>
+											<Text {...(index === selectedRow ? selectedRowProps : unselectedRowProps)}>{
+												container.Image.toString().length > 50 ?
+												container.Image.toString().substring(0, 47) + '...' :
+												container.Image.toString()
+											}</Text>
 										</Box>
 										<Box width={20}>
 											<Text {...(index === selectedRow ? selectedRowProps : unselectedRowProps)}>{container.State}</Text>
 										</Box>
-										<Box width={20}>
+										<Box width={50}>
 											<Text {...(index === selectedRow ? selectedRowProps : unselectedRowProps)}>{container.Ports.map(port => port.IP === '0.0.0.0' ? port.PublicPort : null).filter(port => port).join(",")}</Text>
 										</Box>
-										<Box width={20}>
+										<Box width={50}>
 											<Text {...(index === selectedRow ? selectedRowProps : unselectedRowProps)}>{container.Status}</Text>
 										</Box>
 									</Box>
